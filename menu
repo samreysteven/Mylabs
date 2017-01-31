@@ -1,0 +1,84 @@
+#!/bin/bash
+
+IPSAYA=`wget -qO- ipv4.icanhazip.com`
+rm -rf ip.txt
+clear
+cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
+cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
+freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
+tram=$( free -m | awk 'NR==2 {print $2}' )
+swap=$( free -m | awk 'NR==4 {print $2}' )
+up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
+
+echo "--------------- MENU SCRIPT FOR - $IPSAYA ---------------"
+echo ""
+echo "CPU model : $cname"
+echo "Number of cores : $cores"
+echo "CPU frequency : $freq MHz"
+echo "Total amount of ram : $tram MB"
+echo "Total amount of swap : $swap MB"
+echo "System uptime : $up"
+echo ""
+echo "-----------------------------------------------------------------"
+echo "Choose Your Commad"
+echo "1. autokill"
+echo "2. userlogin"
+echo "3. userlimit login"
+echo "4. userDeleted"
+echo "5. speedtest "
+echo "6. bench-network"
+echo "7. dropmon"
+echo "8. ps_mem"
+echo "9. tambah user"
+echo "10. exit"
+read -p "choose command 1-6 : " Select
+case "$Select" in
+	"1" )
+	clear
+	./autokill.sh
+	exit
+		;;
+	"2" )
+	clear
+	./userlogin.sh
+	exit
+		;;
+	"3" )
+	clear
+	./userlimit.sh
+	exit
+		;;
+	"4" )
+	clear
+	./userexpired.sh
+	exit
+		;;
+	"5" )
+	 ./speedtest_cli.py
+	 exit
+	 	;;
+        "6" )
+	 ./bench-network.sh
+	 exit
+		;;
+	"7" )
+	 ./dropmon
+	 exit
+	 	;;
+	"8" )
+	 ./ps_mem.py
+	 exit
+		;;
+    "9" )
+	 menu
+	 exit
+		;;
+	"10" )
+	 clear
+	 exit
+		;;	
+    clear
+    echo "No Command Detect"
+    exit
+    ;; 
+esac
