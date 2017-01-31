@@ -8,7 +8,6 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 
 # go to root
 cd
-
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
@@ -207,7 +206,8 @@ wget -O userlimit.sh "https://raw.github.com/yurisshOS/debian7os/master/userlimi
 wget -O expire.sh "https://raw.github.com/yurisshOS/debian7os/master/expire.sh"
 wget -O autokill.sh "https://raw.github.com/yurisshOS/debian7os/master/autokill.sh"
 wget -O /etc/issue.net "https://raw.githubusercontent.com/creatingdummy/FNS_Debian7/fornesia.com/null/banner"
-wget -O /usr/bin/menu "https://raw.githubusercontent.com/creatingdummy/DummYDeb7.sh/master/menu"
+wget -O /usr/bin/menu "https://raw.githubusercontent.com/aabell3/Mylabs/master/menu"
+wget -O /usr/bin/baru "https://raw.githubusercontent.com/aabell3/ngaco/master/null/usernew.sh"
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
 echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
 echo "0 */12 * * * root /sbin/reboot" > /etc/cron.d/reboot
@@ -224,7 +224,7 @@ chmod +x autokill.sh
 chmod +x dropmon
 chmod +x expire.sh
 chmod +x menu
-
+chmod +x /usr/bin/baru
 # finishing
 chown -R www-data:www-data /home/vps/public_html
 service cron restart
