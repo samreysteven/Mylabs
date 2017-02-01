@@ -70,7 +70,7 @@ case "$Select" in
 	 exit
 		;;
     "9" )
-	 ./menu
+	 baru
 	 exit
 		;;
 	"10" )
