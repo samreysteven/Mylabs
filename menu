@@ -31,7 +31,7 @@ echo "7. dropmon"
 echo "8. ps_mem"
 echo "9. tambah user"
 echo "10. exit"
-read -p "choose command 1-6 : " Select
+read -p "Ketik angka untuk masuk  : " Select
 case "$Select" in
 	"1" )
 	clear
@@ -70,7 +70,7 @@ case "$Select" in
 	 exit
 		;;
     "9" )
-	 baru
+	 ./baru
 	 exit
 		;;
 	"10" )
