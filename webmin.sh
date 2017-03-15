@@ -27,6 +27,13 @@ apt-get -y --purge remove bind9*;
 # update
 apt-get update; apt-get -y upgrade;
 
+#install dropbear
+apt-get -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 110"/g' /etc/default/dropbear
+echo "/bin/false" » /etc/shells
+
 # install screenfetch
 cd
 wget 'https://raw.githubusercontent.com/aabell3/ngaco/master/null/screenfetch-dev'
@@ -63,7 +70,6 @@ sed -i "s/ssl=1/ssl=0/g" /etc/webmin/miniserv.conf
 /etc/init.d/webmin restart
 cd
 
-service squid3 restart
 service nginx start
 service php-fpm start
 service webmin restart
