@@ -43,5 +43,10 @@ cd
 sed -i 's/#Banner/Banner/g' /etc/ssh/sshd_config
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 wget -O /etc/issue.net "https://raw.githubusercontent.com/aabell3/newdeb/master/script/banner"
+#bonus block torrent
+wget https://raw.githubusercontent.com/zero9911/script/master/script/torrent.sh
+chmod +x  torrent.sh
+./torrent.sh
+
 
 rm menu.sh
