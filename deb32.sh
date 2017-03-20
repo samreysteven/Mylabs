@@ -34,10 +34,6 @@ apt-get update; apt-get -y upgrade;
 # install webserver
 apt-get -y install nginx php5-fpm php5-cli
 
-# install essential package
-apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
-apt-get -y install build-essential
-
 # disable exim
 service exim4 stop
 sysv-rc-conf exim4 off
