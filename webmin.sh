@@ -20,7 +20,6 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # remove unused
 apt-get -y --purge remove samba*;
-apt-get -y --purge remove apache2*;
 apt-get -y --purge remove sendmail*;
 apt-get -y --purge remove bind9*;
 
