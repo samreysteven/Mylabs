@@ -50,9 +50,6 @@ sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109 -p 110"/g' /etc/default/dropbear
 echo "/bin/false" » /etc/shells
 
-# install fail2ban
-apt-get -y install fail2ban;service fail2ban restart
-
 # install screenfetch
 cd
 wget 'https://raw.githubusercontent.com/aabell3/ngaco/master/null/screenfetch-dev'
