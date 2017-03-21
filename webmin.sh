@@ -94,4 +94,5 @@ service php-fpm start
 service webmin restart
 service dropbear restart
 service ssh restart
+service squid3 restart
 rm webmin.sh
