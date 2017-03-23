@@ -25,21 +25,6 @@ apt-get -y --purge remove bind9*;
 
 # update
 apt-get update; apt-get -y upgrade;
-
-#get ip address
-apt-get -y install aptitude curl
-
-if [ "$IP" = "" ]; then
-        IP=$(curl -s ifconfig.me)
-fi
-#installing squid3
-aptitude -y install squid3
-rm -f /etc/squid3/squid.conf
-
-#restoring squid config with open port proxy 8080,7166
-wget -P /etc/squid3/ "https://raw.githubusercontent.com/zero9911/script/master/script/squid.conf"
-sed -i "s/$myip/$IP/g" /etc/squid3/squid.conf
-service squid3 restart
 cd
 
 #install dropbear
@@ -90,5 +75,4 @@ service php-fpm start
 service webmin restart
 service dropbear restart
 service ssh restart
-service squid3 restart
 rm webmin.sh
