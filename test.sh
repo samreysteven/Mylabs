@@ -37,27 +37,27 @@ mv disable-user-expire.shx /home/vps/public_html/
 #6
 ./unshc.sh delete-user-expire.sh -o delete-user-expire.shx
 mv delete-user-expire.shx /home/vps/public_html/
-#1
+#7
 ./unshc.sh banned-user.sh -o banned-user.shx
 mv banned-user.shx /home/vps/public_html/
-#2
+#8
 ./unshc.sh user-expire-list.sh -o user-expire-list.shx
 mv user-expire-list.shx /home/vps/public_html/
-#3
+#9
 ./unshc.sh user-gen.sh -o user-gen.shx
 mv user-gen.shx /home/vps/public_html/
-#4
+#10
 ./unshc.sh user-limit.sh -o user-limit.shx
 mv user-limit.shx /home/vps/public_html/
-#5
+#11
 ./unshc.sh user-list.sh -o user-list.shx
 mv user-list.shx /home/vps/public_html/
-#6
+#12
 ./unshc.sh user-login.sh -o user-login.shx
 mv user-login.shx /home/vps/public_html/
-#1
+#13
 ./unshc.sh user-pass.sh -o user-pass.shx
 mv user-pass.shx /home/vps/public_html/
-#2
+#14
 ./unshc.sh user-renew.sh -o user-renew.shx
 mv user-renew.shx /home/vps/public_html/
